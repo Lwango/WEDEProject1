@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,37 +7,53 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <!-- Navigation -->
   <nav>
-    <h2 class="logo">Sweet Buns</h2>
+    <h1 class="logo">Sweet Buns</h1>
     <ul>
-      <li><button onclick="location.href='homepage.html'">Home</button></li>
-      <li><button onclick="location.href='about.html'">About Us</button></li>
-      <li><button onclick="location.href='services.html'">Services</button></li>
-      <li><button onclick="location.href='enquiry.html'" class="active">Enquiry</button></li>
-      <li><button onclick="location.href='contact.html'">Contact</button></li>
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="enquiry.html">Enquiry</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
-<!-- for all infromation retaining to enquiries-->
+
+  <!-- Page header -->
   <header>
     <h1>Make an Enquiry</h1>
     <p>Have a question about our products, custom cakes, or catering? Fill out the form below and we’ll get back to you soon.</p>
-
-    <form>
-      <label for="name">Full Name:</label><br>
-      <input type="text" id="name" name="name" required><br><br>
-
-      <label for="email">Email Address:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
-
-      <label for="message">Your Message:</label><br>
-      <textarea id="message" name="message" rows="5" placeholder="Type your enquiry here..."></textarea><br><br>
-
-      <button type="submit">Send Enquiry</button>
-    </form>
   </header>
-<!--added email field,text field and number field-->
+
+  <!-- Main content area -->
+  <main class="content">
+    <section class="intro">
+      <form>
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="message">Your Message:</label><br>
+        <textarea id="message" name="message" rows="5" placeholder="Type your enquiry here..."></textarea><br><br>
+
+        <button type="submit">Send Enquiry</button>
+      </form>
+    </section>
+
+    <aside class="sidebar">
+      <h3>Specials</h3>
+      <p>Check our seasonal treats and custom cakes available this week.</p>
+    </aside>
+  </main>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Sweet Buns Bakery</p>
   </footer>
+
 </body>
 </html>
+

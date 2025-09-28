@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,33 +7,56 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
   <!-- Navigation -->
   <nav>
-    <h2 class="logo">Sweet Buns</h2>
+    <h1 class="logo">Sweet Buns</h1>
     <ul>
-      <li><button onclick="location.href='homepage.html'" class="active">Home</button></li>
-      <li><button onclick="location.href='about.html'">About Us</button></li>
-      <li><button onclick="location.href='services.html'">Services</button></li>
-      <li><button onclick="location.href='enquiry.html'">Enquiry</button></li>
-      <li><button onclick="location.href='contact.html'">Contact</button></li>
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="enquiry.html">Enquiry</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <!-- added an image to the homepage -->
+  <!-- Page header with image -->
   <header>
     <h1>Welcome to Sweet Buns Bakery</h1>
-    <img src="images/sweet treat.jpeg" alt="Delicious cake" width="300" height="400">
-    <p>Cape Town’s community bakery – fresh, affordable, and made with love.  
-       <br>From artisanal breads to vegan and gluten-free treats, we have something for everyone.</p>
+    <img src="images/sweet treat.jpeg" alt="Delicious cake" width="600" height="400">
+    <p>
+      Cape Town’s community bakery – fresh, affordable, and made with love.<br>
+      From artisanal breads to vegan and gluten-free treats, we have something for everyone.
+    </p>
   </header>
 
-  <section>
-    <h2>Why Choose Us?</h2>
-    <p>Unlike large franchises, we focus on local ingredients, friendly service, and that “home away from home” feeling.</p>
-  </section>
+  <!-- Main content area -->
+  <main class="content">
+    <section class="intro">
+      <h2>Our Story</h2>
+      <p>
+        Sweet Buns Bakery is a Cape Town–based bakery loved for fresh bread, cakes, and pastries.
+        Started in 2017 by Thato and Michael, it has grown into a neighbourhood favourite while
+        staying true to locally sourced ingredients and friendly service.
+      </p>
 
+      <h2>Why Choose Us?</h2>
+      <p>
+        Unlike large franchises, we focus on local ingredients, friendly service,
+        and that “home away from home” feeling.
+      </p>
+    </section>
+
+    <aside class="sidebar">
+      <h3>Specials</h3>
+      <p>Today’s seasonal treats…</p>
+    </aside>
+  </main>
+
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Sweet Buns Bakery</p>
   </footer>
+
 </body>
 </html>
