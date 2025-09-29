@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- this is the Navigation for the homepage-->
   <nav>
     <h1 class="logo">Sweet Buns</h1>
     <ul>
@@ -20,10 +20,22 @@
     </ul>
   </nav>
 
-  <!-- Page header with image -->
+  <!-- Page header with the main image of the screen -->
   <header>
     <h1>Welcome to Sweet Buns Bakery</h1>
-    <img src="images/sweet treat.jpeg" alt="Delicious cake" width="600" height="400">
+    
+<img 
+  src="images/sweet treats 3.jpeg"
+  srcset="
+    images/sweet treats 3.jpeg 400w,
+    images/sweet treats 3.jpeg 800w,
+    images/sweet treats 3.jpeg 200w
+  "
+  sizes="(max-width: 600px) 100vw,
+         (max-width: 992px) 80vw,
+         60vw"
+  alt="Freshly baked bread display">
+
     <p>
       Cape Town’s community bakery – fresh, affordable, and made with love.<br>
       From artisanal breads to vegan and gluten-free treats, we have something for everyone.
@@ -43,17 +55,21 @@
       <h2>Why Choose Us?</h2>
       <p>
         Unlike large franchises, we focus on local ingredients, friendly service,
-        and that “home away from home” feeling.
+        and that “home away from home” feeling.Ensuring a fresh and unique expericne for every customer
       </p>
     </section>
 
     <aside class="sidebar">
       <h3>Specials</h3>
-      <p>Today’s seasonal treats…</p>
+      <p>Today’s seasonal treats
+        hot cross buns R20
+        carrot cake R50
+        sugar cubes R30
+      </p>
     </aside>
   </main>
 
-  <!-- Footer -->
+  <!-- The Footer -->
   <footer>
     <p>&copy; 2025 Sweet Buns Bakery</p>
   </footer>
