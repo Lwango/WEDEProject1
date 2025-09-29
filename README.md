@@ -71,3 +71,5 @@ Mock Social Media Posts: Simulated Facebook & Instagram bakery promotions.
 
  Conclusion
 This project demonstrates the development of a structured, visually appealing, and accessible bakery website. It applies both design and technical principles while creating a professional, portfolio-ready digital presence for Sweet Buns.
+
+https://github.com/Lwango/WEDEProject1.git
