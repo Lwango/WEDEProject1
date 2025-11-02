@@ -1,13 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sweet Buns | Contact</title>
+  <meta charset="utf-8">
+  <title>Contact Sweet Buns Bakery | Cape Town</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Sweet Buns Bakery for orders, questions or collaborations. Email, phone, map and quick form. Fresh bread, custom cakes & catering in Cape Town.">
+  <link rel="canonical" href="https://yourdomain.net/contact.html">
+
+  <!-- Open-Graph / Twitter -->
+  <meta property="og:title" content="Contact Sweet Buns Bakery">
+  <meta property="og:description" content="Reach out for fresh bread, custom cakes or catering in Cape Town.">
+  <meta property="og:image" content="https://yourdomain.net/images/sweet-treats-3.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
+<body>
   <!-- Navigation -->
   <nav>
     <h1 class="logo">Sweet Buns</h1>
@@ -15,6 +25,7 @@
       <li><a href="homepage.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="enquiry.html">Enquiry</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -24,20 +35,56 @@
   <header>
     <h1>Contact Sweet Buns</h1>
     <p>Email: <a href="mailto:info@sweetbuns.com">info@sweetbuns.com</a></p>
-    <p>Phone: +27 123 456 789</p>
+    <p>Phone: <a href="tel:+27123456789">+27 123 456 789</a></p>
     <p>Address: 45 Bakery Street, Cape Town, South Africa</p>
-    <p>Instagram: sweetbunsOfficial | TikTok: SweetBunsOfficial</p>
+    <p>Instagram: <a href="https://instagram.com/sweetbunsofficial" target="_blank" rel="noopener">@sweetbunsofficial</a>
+       | TikTok: <a href="https://tiktok.com/@sweetbunsofficial" target="_blank" rel="noopener">@SweetBunsofficial</a></p>
   </header>
 
-  <!-- Main content area -->
+  <!-- Main content -->
   <main class="content">
     <section class="intro">
-      <p>We’re here to answer any questions about our bakery, products, or services. Reach out via email, phone, or social media!</p>
+      <h2>Get in touch</h2>
+      <p>We'd love to hear from you. Use the quick form below, or reach us via e-mail, phone or social media.</p>
+
+      <!-- Validated e-mail form -->
+      <div class="form-wrap">
+        <form id="emailForm" novalidate>
+          <input type="hidden" name="formType" value="contact">
+
+          <label for="frmName">Your name *</label>
+          <input id="frmName" name="name" type="text" required minlength="2" aria-required="true">
+
+          <label for="frmEmail">Your e-mail *</label>
+          <input id="frmEmail" name="email" type="email" required aria-required="true">
+
+          <label for="frmMessage">Message *</label>
+          <textarea id="frmMessage" name="message" rows="5" required minlength="10"></textarea>
+
+          <fieldset>
+            <legend>Choose how to send *</legend>
+            <label><input type="radio" name="sendVia" value="mailto" checked> Default mail app</label>
+            <label><input type="radio" name="sendVia" value="gmail"> Gmail (web)</label>
+            <label><input type="radio" name="sendVia" value="outlook"> Outlook (web)</label>
+            <label><input type="radio" name="sendVia" value="server"> Send silently (fastest)</label>
+          </fieldset>
+
+          <button type="submit" id="submitBtn">Send message</button>
+          <p id="formMsg" role="alert"></p>
+        </form>
+      </div>
+
+      <!-- Interactive map -->
+      <h2>Find us</h2>
+      <div id="map"></div>
     </section>
 
+    <!-- Sidebar -->
     <aside class="sidebar">
-      <h3>Specials</h3>
-      <p>Check our seasonal treats and custom cakes available this week.</p>
+      <h3>Specials this week</h3>
+      <p>Hot cross buns – R20<br>
+         Carrot cake slice – R50<br>
+         Sugar cubes (4 pc) – R30</p>
     </aside>
   </main>
 
@@ -46,6 +93,8 @@
     <p>&copy; 2025 Sweet Buns Bakery</p>
   </footer>
 
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
-

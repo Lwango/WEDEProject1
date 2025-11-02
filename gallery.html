@@ -1,0 +1,54 @@
+<!-- gallery.html  (lightbox included) -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Gallery | Sweet Buns Bakery</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Photo gallery of fresh bread, cakes and pastries at Sweet Buns Bakery, Cape Town.">
+  <link rel="canonical" href="https://yourdomain.net/gallery.html">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;padding:0;margin:0;}
+    .gallery-grid img{width:100%;height:160px;object-fit:cover;border-radius:6px;cursor:pointer;transition:transform .3s;}
+    .gallery-grid img:hover{transform:scale(1.05);}
+    #lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:999;}
+    #lightbox img{max-width:90%;max-height:90%;border-radius:8px;}
+    #lightbox span{position:absolute;top:20px;right:40px;color:#fff;font-size:40px;cursor:pointer;}
+  </style>
+</head>
+<body>
+<nav><h1 class="logo">Sweet Buns</h1><ul><li><a href="homepage.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="enquiry.html">Enquiry</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
+<header><h1>Fresh out of the oven</h1><p>Click any image to see it larger.</p></header>
+<main class="content">
+  <section class="intro">
+    <div class="gallery-grid" id="gallery">
+      <!-- descriptive file names & alt for SEO -->
+      <img src="images/artisan-bread-thumb.jpg" data-full="images/artisan-bread.jpg" alt="Artisanal sour-dough bread baked daily at Sweet Buns Bakery Cape Town" loading="lazy">
+      <img src="images/vegan-muffins-thumb.jpg" data-full="images/vegan-muffins.jpg" alt="Vegan chocolate muffins with local cocoa" loading="lazy">
+      <img src="images/custom-cake-thumb.jpg" data-full="images/custom-cake.jpg" alt="Custom birthday cake created by Sweet Buns Bakery" loading="lazy">
+      <img src="images/croissant-thumb.jpg" data-full="images/croissant.jpg" alt="Buttery croissants made fresh every morning" loading="lazy">
+      <img src="images/sweet-treats-3-thumb.jpg" data-full="images/sweet-treats-3.jpg" alt="Assorted sweet treats and pastries display" loading="lazy">
+      <img src="images/hot-cross-buns-thumb.jpg" data-full="images/hot-cross-buns.jpg" alt="Traditional hot cross buns seasonal special" loading="lazy">
+    </div>
+  </section>
+  <aside class="sidebar"><h3>Specials</h3><p>Check our seasonal treats and custom cakes available this week.</p></aside>
+</main>
+<footer><p>&copy; 2025 Sweet Buns Bakery</p></footer>
+
+<script src="js/main.js"></script>
+<script>
+/* simple lightbox */
+const gal = document.getElementById('gallery');
+if(gal){
+  gal.addEventListener('click',e=>{
+    if(e.target.tagName!=='IMG')return;
+    const box=document.createElement('div');box.id='lightbox';
+    box.innerHTML=`<img src="${e.target.dataset.full}" alt="${e.target.alt}"><span id="close">&times;</span>`;
+    document.body.appendChild(box);
+    box.onclick=()=>box.remove();
+  });
+}
+</script>
+</body>
+</html>

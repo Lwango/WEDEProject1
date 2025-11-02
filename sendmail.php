@@ -6,8 +6,14 @@ $recipient = 'info@sweetbuns.com';          // same as JS constant
 $allowed   = ['name','email','message','formType','enquiryType','eventDate'];
 
 // basic checks
-if ($_SERVER['REQUEST_METHOD'] !== 'POST')                       http_response_code(405); exit('Method not allowed');
-if (!filter_var($_POST['email']??'', FILTER_VALIDATE_EMAIL))   http_response_code(400); exit('Invalid email');
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    exit('Method not allowed');
+}
+if (!filter_var($_POST['email']??'', FILTER_VALIDATE_EMAIL)) {
+    http_response_code(400);
+    exit('Invalid email');
+}
 
 // build message
 $subject = $_POST['formType'].' from '.$_POST['name'];

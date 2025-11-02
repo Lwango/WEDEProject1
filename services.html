@@ -1,20 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sweet Buns | Services</title>
+  <meta charset="utf-8">
+  <title>Our Services | Sweet Buns Bakery Cape Town</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Daily fresh bread, custom cakes, catering, vegan & gluten-free options. Cape Town bakery services for families, students, businesses.">
+  <link rel="canonical" href="https://yourdomain.net/services.html">
+
+  <!-- Open-Graph / Twitter -->
+  <meta property="og:title" content="Our Services | Sweet Buns Bakery">
+  <meta property="og:description" content="Daily fresh bread, custom cakes, catering, vegan & gluten-free options in Cape Town.">
+  <meta property="og:image" content="https://yourdomain.net/images/custom-cake.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
 
-  <!-- The Navigation -->
+<body>
+  <!-- Navigation -->
   <nav>
     <h1 class="logo">Sweet Buns</h1>
     <ul>
       <li><a href="homepage.html">Home</a></li>
       <li><a href="about.html">About Us</a></li>
       <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
       <li><a href="enquiry.html">Enquiry</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
@@ -23,37 +34,70 @@
   <!-- Page header -->
   <header>
     <h1>Our Services</h1>
-    <p>We provide more than just baked goods – Sweet Buns is about community, quality, and innovation.</p>
+    <p>We provide more than just baked goods – Sweet Buns is about community, quality and innovation.</p>
   </header>
 
-  <!-- Main content area -->
+  <!-- Main content -->
   <main class="content">
     <section class="intro">
-      <h2>What We Offer</h2>
-      <ul>
-        <li>Daily fresh breads, pastries, and cakes</li>
-        <li>Vegan, gluten-free, and reduced-sugar options</li>
-        <li>Custom cakes for birthdays and events</li>
-        <li>Catering for small businesses and events</li>
-        <li>Seasonal specials and creative desserts</li>
-      </ul>
+      <h2>What we offer</h2>
 
-      <h2>Target Audience</h2>
-      <p>We proudly serve families, students, professionals, health-conscious customers, and tourists – plus partner with local cafés and businesses.</p>
+      <!-- Live search box (dynamic filter) -->
+      <label for="serviceSearch" class="visually-hidden">Search services</label>
+      <input id="serviceSearch" type="search" placeholder="Search services…" aria-label="Search services">
 
-      <h2>Website Goals</h2>
-      <ul>
-        <li>Boost online visibility and attract new customers</li>
-        <li>Enable online orders and delivery</li>
-        <li>Promote seasonal specials & custom cakes</li>
-        <li>Offer loyalty rewards and promotions</li>
-        <li>Improve communication with live chat & enquiries</li>
-      </ul>
+      <!-- Service cards (each searchable) -->
+      <div class="service-cards">
+        <article class="service-card">
+          <h3>Daily fresh breads, pastries & cakes</h3>
+          <p>Baked on site every morning using local stone-ground flour.</p>
+        </article>
+
+        <article class="service-card">
+          <h3>Vegan, gluten-free & reduced-sugar options</h3>
+          <p>Never an afterthought – separate ovens, dedicated trays.</p>
+        </article>
+
+        <article class="service-card">
+          <h3>Custom cakes for birthdays & events</h3>
+          <p>From kids’ unicorns to elegant wedding tiers. 48 h notice.</p>
+        </article>
+
+        <article class="service-card">
+          <h3>Catering for small businesses & events</h3>
+          <p>Breakfast trays, sandwich platters, dessert tables.</p>
+        </article>
+
+        <article class="service-card">
+          <h3>Seasonal specials & creative desserts</h3>
+          <p>Think hot-cross-buns, mince-pie croissants, peppermint-crisp tarts.</p>
+        </article>
+      </div>
+
+      <!-- Accordion FAQ (interactive element) -->
+      <h2>Frequently asked questions</h2>
+      <button class="accordion">Where do you source your ingredients?</button>
+      <div class="panel">
+        <p>We partner with local Cape Town farms for fresh, sustainable produce.</p>
+      </div>
+
+      <button class="accordion">Do you offer gluten-free options?</button>
+      <div class="panel">
+        <p>Yes – all our GF goods are baked in a separate area to avoid cross-contamination.</p>
+      </div>
+
+      <button class="accordion">How much notice for a custom cake?</button>
+      <div class="panel">
+        <p>48 hours for standard designs; 1 week for large or intricate cakes.</p>
+      </div>
     </section>
 
+    <!-- Sidebar -->
     <aside class="sidebar">
-      <h3>Specials</h3>
-      <p>Check our seasonal treats and custom cakes available this week.</p>
+      <h3>Specials this week</h3>
+      <p>Hot cross buns – R20<br>
+         Carrot cake slice – R50<br>
+         Sugar cubes (4 pc) – R30</p>
     </aside>
   </main>
 
@@ -62,5 +106,6 @@
     <p>&copy; 2025 Sweet Buns Bakery</p>
   </footer>
 
+  <script src="js/main.js"></script>
 </body>
 </html>

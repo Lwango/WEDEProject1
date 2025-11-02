@@ -1,42 +1,95 @@
- <!-- Contact page version (enquiry version identical except heading) -->
-<section class="form-wrap">
-  <h2>Send us a message</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Enquiry | Sweet Buns Bakery</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Enquire about custom cakes, catering, volunteering or sponsorships with Sweet Buns Bakery, Cape Town.">
+  <link rel="canonical" href="https://yourdomain.net/enquiry.html">
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-  <form id="emailForm" novalidate>
-    <input type="hidden" name="formType" value="contact"> <!-- 'enquiry' on enquiry.html -->
+<body>
+  <!-- Navigation (identical on every page) -->
+  <nav>
+    <h1 class="logo">Sweet Buns</h1>
+    <ul>
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="enquiry.html">Enquiry</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-    <label for="frmName">Your name *</label>
-    <input id="frmName" name="name" type="text" required minlength="2" aria-required="true">
+  <!-- Page header -->
+  <header>
+    <h1>Make an Enquiry</h1>
+    <p>Ask about custom cakes, catering, volunteering or sponsorship opportunities.&nbsp; We’ll get back to you within 24&nbsp;hours.</p>
+  </header>
 
-    <label for="frmEmail">Your e-mail *</label>
-    <input id="frmEmail" name="email" type="email" required aria-required="true">
+  <!-- Main content -->
+  <main class="content">
+    <section class="intro">
+      <h2>Tell us what you need</h2>
 
-    <label for="frmMessage">Message *</label>
-    <textarea id="frmMessage" name="message" rows="5" required minlength="10"></textarea>
+      <!-- Enquiry form (styled exactly like contact.html) -->
+      <div class="form-wrap">
+        <form id="emailForm" novalidate>
+          <input type="hidden" name="formType" value="enquiry">
 
-    <!-- optional extra fields on enquiry page -->
-    <div id="enquiryExtra" style="display:none">
-      <label for="frmType">Enquiry type</label>
-      <select id="frmType" name="enquiryType">
-        <option>Custom cake</option>
-        <option>Catering</option>
-        <option>Volunteer</option>
-        <option>Sponsorship</option>
-      </select>
+          <label for="frmName">Your name *</label>
+          <input id="frmName" name="name" type="text" required minlength="2" aria-required="true">
 
-      <label for="frmDate">Event date (if any)</label>
-      <input id="frmDate" name="eventDate" type="date">
-    </div>
+          <label for="frmEmail">Your e-mail *</label>
+          <input id="frmEmail" name="email" type="email" required aria-required="true">
 
-    <fieldset>
-      <legend>Choose how to send *</legend>
-      <label><input type="radio" name="sendVia" value="mailto" checked> Default mail app</label>
-      <label><input type="radio" name="sendVia" value="gmail"> Gmail (web)</label>
-      <label><input type="radio" name="sendVia" value="outlook"> Outlook (web)</label>
-      <label><input type="radio" name="sendVia" value="server"> Send silently (fastest)</label>
-    </fieldset>
+          <!-- enquiry-only fields -->
+          <label for="frmType">Enquiry type</label>
+          <select id="frmType" name="enquiryType">
+            <option>Custom cake</option>
+            <option>Catering</option>
+            <option>Volunteer</option>
+            <option>Sponsorship</option>
+          </select>
 
-    <button type="submit" id="submitBtn">Send message</button>
-    <p id="formMsg" role="alert"></p>
-  </form>
-</section>
+          <label for="frmDate">Event date (if applicable)</label>
+          <input id="frmDate" name="eventDate" type="date">
+
+          <label for="frmMessage">Message *</label>
+          <textarea id="frmMessage" name="message" rows="5" required minlength="10"></textarea>
+
+          <!-- sending method -->
+          <fieldset>
+            <legend>Choose how to send *</legend>
+            <label><input type="radio" name="sendVia" value="mailto" checked> Default mail app</label>
+            <label><input type="radio" name="sendVia" value="gmail"> Gmail (web)</label>
+            <label><input type="radio" name="sendVia" value="outlook"> Outlook (web)</label>
+            <label><input type="radio" name="sendVia" value="server"> Send silently (fastest)</label>
+          </fieldset>
+
+          <button type="submit" id="submitBtn">Send enquiry</button>
+          <p id="formMsg" role="alert"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Sidebar (same as other pages) -->
+    <aside class="sidebar">
+      <h3>Specials this week</h3>
+      <p>Hot cross buns – R20<br>
+         Carrot cake slice – R50<br>
+         Sugar cubes (4 pc) – R30</p>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Sweet Buns Bakery</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
