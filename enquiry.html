@@ -1,59 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sweet Buns | Enquiry</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+ <!-- Contact page version (enquiry version identical except heading) -->
+<section class="form-wrap">
+  <h2>Send us a message</h2>
 
-  <!-- Navigation -->
-  <nav>
-    <h1 class="logo">Sweet Buns</h1>
-    <ul>
-      <li><a href="homepage.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="enquiry.html">Enquiry</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+  <form id="emailForm" novalidate>
+    <input type="hidden" name="formType" value="contact"> <!-- 'enquiry' on enquiry.html -->
 
-  <!-- Page header -->
-  <header>
-    <h1>Make an Enquiry</h1>
-    <p>Have a question about our products, custom cakes, or catering? Fill out the form below and we’ll get back to you soon.</p>
-  </header>
+    <label for="frmName">Your name *</label>
+    <input id="frmName" name="name" type="text" required minlength="2" aria-required="true">
 
-  <!-- Main content area -->
-  <main class="content">
-    <section class="intro">
-      <form>
-        <label for="name">Full Name:</label><br>
-        <input type="text" id="name" name="name" required><br><br>
+    <label for="frmEmail">Your e-mail *</label>
+    <input id="frmEmail" name="email" type="email" required aria-required="true">
 
-        <label for="email">Email Address:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+    <label for="frmMessage">Message *</label>
+    <textarea id="frmMessage" name="message" rows="5" required minlength="10"></textarea>
 
-        <label for="message">Your Message:</label><br>
-        <textarea id="message" name="message" rows="5" placeholder="Type your enquiry here..."></textarea><br><br>
+    <!-- optional extra fields on enquiry page -->
+    <div id="enquiryExtra" style="display:none">
+      <label for="frmType">Enquiry type</label>
+      <select id="frmType" name="enquiryType">
+        <option>Custom cake</option>
+        <option>Catering</option>
+        <option>Volunteer</option>
+        <option>Sponsorship</option>
+      </select>
 
-        <button type="submit">Send Enquiry</button>
-      </form>
-    </section>
+      <label for="frmDate">Event date (if any)</label>
+      <input id="frmDate" name="eventDate" type="date">
+    </div>
 
-    <aside class="sidebar">
-      <h3>Specials</h3>
-      <p>Check our seasonal treats and custom cakes available this week.</p>
-    </aside>
-  </main>
+    <fieldset>
+      <legend>Choose how to send *</legend>
+      <label><input type="radio" name="sendVia" value="mailto" checked> Default mail app</label>
+      <label><input type="radio" name="sendVia" value="gmail"> Gmail (web)</label>
+      <label><input type="radio" name="sendVia" value="outlook"> Outlook (web)</label>
+      <label><input type="radio" name="sendVia" value="server"> Send silently (fastest)</label>
+    </fieldset>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Sweet Buns Bakery</p>
-  </footer>
-
-</body>
-</html>
-
+    <button type="submit" id="submitBtn">Send message</button>
+    <p id="formMsg" role="alert"></p>
+  </form>
+</section>
