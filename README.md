@@ -1,75 +1,97 @@
 Sweet Buns Bakery Website
+
 Name: Lwango
 Student Number: ST10466906
 Subject: WEDE Project 1
+
 Project Overview
-This project is a web development portfolio piece focused on Sweet Buns, a fictional local bakery based in Cape Town. The bakery prides itself on freshly baked goods, affordable prices, and a warm, welcoming atmosphere.
-The purpose of this project is to design and structure a website that showcases the bakery’s brand identity, products, and customer offerings while applying good design practices and web development principles.
+
+The Sweet Buns Bakery Website is a web development project showcasing a fictional Cape Town bakery known for its freshly baked goods, affordability, and friendly atmosphere.
+The goal of this project is to apply modern web design principles and front-end development skills to create a professional and fully functional website that reflects the bakery’s warmth, creativity, and community spirit.
+
 Project Goals
-Create a responsive and user-friendly website.
 
-Present clear branding for Sweet Buns (logo, colors, typography).
+Develop a responsive, user-friendly website accessible across devices.
 
-Include pages such as Home, About Us, Menu, Specials, and Contact.
+Establish a clear and consistent brand identity (logo, fonts, and color scheme).
 
-Use images, text, and layouts that reflect the bakery’s cozy and inviting style.
+Include key pages:
 
-Ensure accessibility and ease of navigation.
- Features
-Homepage: Introduction and bakery highlights.
+Home – welcoming message and bakery highlights
 
+About Us – story, founders, and values
 
-About Us: Bakery story and values.
+Services/Menu – baked goods, prices, and custom orders
 
+Gallery – interactive lightbox with product photos
 
-Menu: Full product listing with categories (cakes, breads, pastries).
+Enquiry/Contact – customer form and social links
 
+Apply semantic HTML, organized CSS, and accessible navigation.
 
-Specials: Promotions, seasonal offers, and collaborations.
+Create an inviting aesthetic consistent with bakery branding.
 
+Features
 
-Contact: Customer form, map location, and social media links.
+Homepage: Friendly introduction and featured items.
 
+About Us: Bakery story, values, and community involvement.
+
+Services/Menu: Detailed list of products (cakes, breads, pastries, specials).
+
+Gallery: Interactive lightbox gallery showing product images with prices.
+
+Enquiry: User form for product or order questions.
+
+Contact: Map, contact details, and links to Instagram & Facebook.
 
 Design Considerations
-Typography: Friendly and easy-to-read fonts from Google Fonts.
 
+Typography: Clean, approachable fonts from Google Fonts (e.g., “Poppins” & “Merriweather”).
 
-Color Scheme: Warm tones (browns, creams, soft pastels) to reflect a bakery feel.
+Color Palette: Warm bakery tones — soft browns, beige, and pastel cream.
 
+Layout: Grid-based structure ensuring visual balance and responsiveness.
 
-Layout: Simple grid-based structure for clean navigation.
+Accessibility: Alt text for all images and easy-to-read text contrasts.
 
-
-User Experience: Easy access to menu and contact info; mobile-friendly design.
-
+User Experience (UX): Smooth navigation and mobile-friendly interface.
 
 Budget Estimate
-Domain Registration: ± R150/year
-
-
-Hosting: ± R500/year
-
-
-Stock Images/Icons: Free (Creative Commons)
-
-
-Development Tools: Free (VS Code, GitHub)
-
-
-Total Estimated Cost: ± R650/year
-
+Item	Description	Estimated Cost
+Domain Registration	Yearly	± R150/year
+Hosting	Annual plan	± R500/year
+Images & Icons	Creative Commons (Free)	R0
+Tools	VS Code, GitHub (Free)	R0
+Total Estimated Cost		± R650/year
 Content Sourcing
-Original Content: Written descriptions of menu items, specials, and bakery story.
 
+Original Content: Written product descriptions, specials, and bakery story.
 
-Creative Commons Resources: Free-to-use images from Unsplash/Pexels.
+Free Image Sources: Unsplash, Pexels (Creative Commons licensed).
 
+Mock Promotions: Instagram and Pick n Pay–inspired layouts for realism.
 
-Mock Social Media Posts: Simulated Facebook & Instagram bakery promotions.
+AI Assistance: Some structure and accessibility improvements via ChatGPT (for educational support).
 
+References
 
- Conclusion
-This project demonstrates the development of a structured, visually appealing, and accessible bakery website. It applies both design and technical principles while creating a professional, portfolio-ready digital presence for Sweet Buns.
+ChatGPT (OpenAI, 2025): Used for HTML structure validation and gallery lightbox scripting.
 
-https://github.com/Lwango/WEDEProject1.git
+Cinnabon Official Website: Visual inspiration for warm tones and pastry presentation.
+
+Pick n Pay Bakery Section (2025): Reference for realistic South African pricing.
+
+Instagram Posts (@bakeriesofcapetown): Inspiration for modern layout and caption styling.
+
+Changelog
+Date	Update	Description
+2025-10-15	Initial Setup	Project folder created in VS Code; base HTML structure added.
+2025-10-20	Navigation & Links	Added navbar with full page linkage.
+2025-10-25	Gallery Page	Implemented responsive lightbox gallery for images.
+2025-10-28	Enquiry Page	Added interactive form and contact section.
+2025-11-02	SEO & Metadata	Included meta descriptions, Open Graph tags, and canonical links.
+2025-11-03	Final Updates	Improved accessibility, branding, and mobile layout.
+GitHub Repository
+
+🔗 https://github.com/Lwango/WEDEProject1.git
