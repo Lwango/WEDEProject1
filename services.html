@@ -5,13 +5,6 @@
   <title>Bakery Services Cape Town | Custom Cakes, Catering, Vegan Options</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Daily bread, custom birthday cakes, corporate catering, vegan & gluten-free options. Reliable Cape Town bakery services for families, students & businesses.">
-  <link rel="canonical" href="https://yourdomain.net/services.html">
-
-  <meta property="og:title" content="Bakery Services Cape Town | Custom Cakes, Catering, Vegan Options">
-  <meta property="og:description" content="Daily fresh bread, custom cakes, corporate catering, vegan & gluten-free options. Cape Town bakery services for families, students & businesses.">
-  <meta property="og:image" content="https://yourdomain.net/images/custom-birthday-cake-cape-town.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -32,16 +25,14 @@
     <h1>Our Services</h1>
     <p>We provide more than just baked goods – Sweet Buns is about community, quality and innovation.</p>
 
-    <!-- Search bar moved to top -->
-    <label for="serviceSearch" class="visually-hidden">Search services</label>
-    <input id="serviceSearch" type="search" placeholder="Search services…" aria-label="Search services">
+    <!-- Search bar -->
+    <input id="siteSearch" type="search" placeholder="Search site…" aria-label="Search site">
   </header>
 
   <main class="content">
     <section class="intro">
       <h2>What we offer</h2>
 
-      <!-- Service cards (each searchable) -->
       <div class="service-cards">
         <article class="service-card">
           <h3>Daily fresh breads, pastries & cakes</h3>
@@ -69,7 +60,6 @@
         </article>
       </div>
 
-      <!-- Accordion FAQ (interactive element) -->
       <h2>Frequently asked questions</h2>
       <button class="accordion">Where do you source your ingredients?</button>
       <div class="panel">
@@ -97,6 +87,50 @@
     <p>&copy; 2025 Sweet Buns Bakery</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- Keyword Search Script -->
+  <script>
+    document.getElementById('siteSearch').addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        const input = this.value.trim().toLowerCase();
+
+        // simple keyword-to-page mapping
+        const pageMap = {
+          home: 'homepage.html',
+          homepage: 'homepage.html',
+          about: 'about.html',
+          'about us': 'about.html',
+          services: 'services.html',
+          service: 'services.html',
+          serivces: 'services.html',  // handles common typo
+          gallery: 'gallery.html',
+          pictures: 'gallery.html',
+          enquiry: 'enquiry.html',
+          inquire: 'enquiry.html',
+          inquiry: 'enquiry.html',
+          contact: 'contact.html',
+          contatc: 'contact.html',   // handles common typo
+          phone: 'contact.html',
+          email: 'contact.html',
+        };
+
+        let destination = null;
+
+        // find first matching keyword
+        for (const [keyword, url] of Object.entries(pageMap)) {
+          if (input.includes(keyword)) {
+            destination = url;
+            break;
+          }
+        }
+
+        if (destination) {
+          window.location.href = destination;
+        } else {
+          alert('No matching page found. Try typing: home, about, services, gallery, enquiry, or contact.');
+        }
+      }
+    });
+  </script>
 </body>
 </html>

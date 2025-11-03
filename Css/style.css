@@ -236,3 +236,7 @@ button:focus {
 #formMsg{margin-top:1rem;font-weight:600;}
 .error{color:#d8000c;}
 .success{color:#4f8a10;}
+.radio-legend{font-weight:600;margin:12px 0 6px;display:block;}
+.radio-line{display:flex;flex-wrap:wrap;gap:12px;}
+.radio-line label{display:flex;align-items:center;gap:6px;white-space:nowrap;cursor:pointer;}
+.radio-line input{margin:0;}

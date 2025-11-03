@@ -5,13 +5,6 @@
   <title>Bakery Enquiry Cape Town | Order Custom Cakes & Catering – Sweet Buns</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Enquire about custom cakes, event catering, volunteering or sponsorships. Quick 24 h response from Sweet Buns Bakery, Cape Town.">
-  <link rel="canonical" href="https://yourdomain.net/enquiry.html">
-
-  <meta property="og:title" content="Bakery Enquiry Cape Town | Order Custom Cakes & Catering – Sweet Buns">
-  <meta property="og:description" content="Enquire about custom cakes, event catering, volunteering or sponsorships. Quick 24 h response from Sweet Buns Bakery, Cape Town.">
-  <meta property="og:image" content="https://yourdomain.net/images/custom-birthday-cake-cape-town.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -37,7 +30,6 @@
     <section class="intro">
       <h2>Tell us what you need</h2>
 
-      <!-- Enquiry form (same styling as contact.html) -->
       <div class="form-wrap">
         <form id="emailForm" novalidate>
           <input type="hidden" name="formType" value="enquiry">
@@ -48,7 +40,6 @@
           <label for="frmEmail">Your e-mail *</label>
           <input id="frmEmail" name="email" type="email" required aria-required="true">
 
-          <!-- enquiry-only fields -->
           <label for="frmType">Enquiry type</label>
           <select id="frmType" name="enquiryType">
             <option>Custom cake</option>
@@ -63,7 +54,6 @@
           <label for="frmMessage">Message *</label>
           <textarea id="frmMessage" name="message" rows="5" required minlength="10"></textarea>
 
-          <!-- sending method -->
           <fieldset>
             <legend>Choose how to send *</legend>
             <label><input type="radio" name="sendVia" value="mailto" checked> Default mail app</label>
@@ -77,7 +67,7 @@
         </form>
       </div>
 
-      <p>Or simply e-mail us at <a href="mailto:info@sweetbuns.com">info@sweetbuns.com</a> – we reply within 24 hours.</p>
+      <p>Or e-mail us directly at <a href="mailto:info@sweetbuns.com">info@sweetbuns.com</a>.</p>
     </section>
 
     <aside class="sidebar">
@@ -90,6 +80,52 @@
     <p>&copy; 2025 Sweet Buns Bakery</p>
   </footer>
 
-  <script src="js/main.js"></script>
+  <!-- Working email form script -->
+  <script>
+    document.getElementById('emailForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('frmName').value.trim();
+      const email = document.getElementById('frmEmail').value.trim();
+      const type = document.getElementById('frmType').value;
+      const date = document.getElementById('frmDate').value;
+      const message = document.getElementById('frmMessage').value.trim();
+      const sendVia = document.querySelector('input[name="sendVia"]:checked').value;
+      const msg = document.getElementById('formMsg');
+
+      if (!name || !email || !message) {
+        msg.textContent = 'Please fill in all required fields.';
+        msg.style.color = 'red';
+        return;
+      }
+
+      const subject = encodeURIComponent(`Enquiry: ${type} from ${name}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nType: ${type}\nDate: ${date || 'N/A'}\n\nMessage:\n${message}`
+      );
+
+      let mailUrl = '';
+
+      if (sendVia === 'mailto') {
+        mailUrl = `mailto:info@sweetbuns.com?subject=${subject}&body=${body}`;
+        window.location.href = mailUrl;
+      } else if (sendVia === 'gmail') {
+        mailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=info@sweetbuns.com&su=${subject}&body=${body}`;
+        window.open(mailUrl, '_blank');
+      } else if (sendVia === 'outlook') {
+        mailUrl = `https://outlook.office.com/mail/deeplink/compose?to=info@sweetbuns.com&subject=${subject}&body=${body}`;
+        window.open(mailUrl, '_blank');
+      } else if (sendVia === 'server') {
+        // Simulated success message (since no real server backend)
+        msg.textContent = 'Your enquiry has been sent successfully!';
+        msg.style.color = 'green';
+        this.reset();
+        return;
+      }
+
+      msg.textContent = 'Opening your email app…';
+      msg.style.color = 'blue';
+    });
+  </script>
 </body>
 </html>

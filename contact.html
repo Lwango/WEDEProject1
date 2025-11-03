@@ -2,17 +2,66 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Contact Sweet Buns Bakery | Phone, Map & Form – Cape Town</title>
+  <title>Contact Sweet Buns Bakery | Cape Town</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contact Sweet Buns Bakery for orders, questions or collaborations. Phone, map, quick form. Fresh bread, custom cakes & catering in Cape Town.">
-  <link rel="canonical" href="https://yourdomain.net/contact.html">
-
-  <meta property="og:title" content="Contact Sweet Buns Bakery | Phone, Map & Form – Cape Town">
-  <meta property="og:description" content="Phone, e-mail, map, social media and quick form. Contact Sweet Buns Bakery for orders, questions or collaborations in Cape Town.">
-  <meta property="og:image" content="https://yourdomain.net/images/artisan-bread-display-cape-town.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-
+  <meta name="description" content="Contact Sweet Buns Bakery in Cape Town. Find our location, phone, email, or send us a quick message.">
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: #333;
+      background: #fff8f5;
+    }
+    nav {
+      background: #8B4513;
+      padding: 1em 2em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav .logo { color: #fff; font-size: 1.4rem; font-weight: bold; }
+    nav ul { list-style: none; display: flex; gap: 1em; margin: 0; padding: 0; }
+    nav a { color: #fff; text-decoration: none; font-weight: 500; }
+    header { text-align: center; padding: 2em 1em; background: #ffe7d4; }
+    main { display: flex; flex-wrap: wrap; gap: 2em; padding: 2em; max-width: 1100px; margin: auto; }
+    .intro { flex: 2; min-width: 320px; }
+    .sidebar {
+      flex: 1; min-width: 250px; background: #fff4ec;
+      padding: 1.5em; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    h1, h2, h3 { color: #6b3000; }
+    a { color: #b3541e; }
+    form {
+      display: flex; flex-direction: column; gap: 10px;
+      background: #fff; padding: 1.5em; border-radius: 10px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1); margin-top: 1em;
+    }
+    input, textarea, button {
+      padding: 0.7em; border: 1px solid #ccc; border-radius: 6px; font-size: 1em;
+    }
+    button {
+      background: #8B4513; color: white; font-weight: 600; border: none; cursor: pointer;
+      transition: background 0.2s;
+    }
+    button:hover { background: #a25a2a; }
+    .radio-line { display: flex; gap: 1em; flex-wrap: wrap; }
+    #map {
+      height: 350px; width: 100%; border-radius: 10px;
+      margin-top: 1.5em; box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+    footer {
+      text-align: center; padding: 1em; background: #8B4513; color: #fff; margin-top: 2em;
+    }
+    @media(max-width: 768px) {
+      nav ul { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
 </head>
 
 <body>
@@ -20,7 +69,7 @@
     <h1 class="logo">Sweet Buns</h1>
     <ul>
       <li><a href="homepage.html">Home</a></li>
-      <li><a href="about.html">About Us</a></li>
+      <li><a href="about.html">About</a></li>
       <li><a href="services.html">Services</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="enquiry.html">Enquiry</a></li>
@@ -30,63 +79,136 @@
 
   <header>
     <h1>Contact Sweet Buns Bakery</h1>
-    <p>Reach us by phone, e-mail, social media or the quick form below. We reply within 24 h.</p>
+    <p>We’d love to hear from you! Visit, call, or send us a quick message below.</p>
   </header>
 
-  <main class="content">
+  <main>
     <section class="intro">
       <h2>Get in touch</h2>
-      <p>We'd love to hear from you. Use the quick form below, or reach us via e-mail, phone or social media.</p>
+      <p>Email: <a href="mailto:info@sweetbuns.com">info@sweetbuns.com</a><br>
+      Phone: <a href="tel:+27123456789">+27 123 456 789</a><br>
+      Address: 45 Bakery Street, Cape Town, South Africa</p>
 
-      <!-- Contact details + internal links -->
-      <p>Email: <a href="mailto:info@sweetbuns.com">info@sweetbuns.com</a> | Phone: <a href="tel:+27123456789">+27 123 456 789</a></p>
-      <p>Address: 45 Bakery Street, Cape Town, South Africa</p>
-      <p>Instagram: <a href="https://instagram.com/sweetbunsofficial" target="_blank" rel="noopener">@sweetbunsofficial</a> | TikTok: <a href="https://tiktok.com/@sweetbunsofficial" target="_blank" rel="noopener">@SweetBunsofficial</a></p>
-      <p>Or <a href="enquiry.html">make an enquiry</a> for custom cakes / catering.</p>
+      <p>Instagram: <a href="https://instagram.com/sweetbunsofficial" target="_blank">@sweetbunsofficial</a><br>
+      TikTok: <a href="https://tiktok.com/@sweetbunsofficial" target="_blank">@SweetBunsofficial</a></p>
 
-      <!-- Validated contact form -->
-      <div class="form-wrap">
-        <form id="emailForm" novalidate>
-          <input type="hidden" name="formType" value="contact">
+      <form id="emailForm">
+        <label for="frmName">Name *</label>
+        <input id="frmName" name="name" type="text" required>
 
-          <label for="frmName">Your name *</label>
-          <input id="frmName" name="name" type="text" required minlength="2" aria-required="true">
+        <label for="frmEmail">Email *</label>
+        <input id="frmEmail" name="email" type="email" required>
 
-          <label for="frmEmail">Your e-mail *</label>
-          <input id="frmEmail" name="email" type="email" required aria-required="true">
+        <label for="frmMessage">Message *</label>
+        <textarea id="frmMessage" name="message" rows="4" required></textarea>
 
-          <label for="frmMessage">Message *</label>
-          <textarea id="frmMessage" name="message" rows="5" required minlength="10"></textarea>
+        <label class="radio-legend">Send via:</label>
+        <div class="radio-line">
+          <label><input type="radio" name="sendVia" value="mailto" checked> Mail app</label>
+          <label><input type="radio" name="sendVia" value="gmail"> Gmail</label>
+          <label><input type="radio" name="sendVia" value="outlook"> Outlook</label>
+          <label><input type="radio" name="sendVia" value="server"> Silent</label>
+        </div>
 
-          <fieldset>
-            <legend>Choose how to send *</legend>
-            <label><input type="radio" name="sendVia" value="mailto" checked> Default mail app</label>
-            <label><input type="radio" name="sendVia" value="gmail"> Gmail (web)</label>
-            <label><input type="radio" name="sendVia" value="outlook"> Outlook (web)</label>
-            <label><input type="radio" name="sendVia" value="server"> Send silently (fastest)</label>
-          </fieldset>
+        <button type="submit">Send Message</button>
+        <p id="formMsg" role="alert"></p>
+      </form>
 
-          <button type="submit" id="submitBtn">Send message</button>
-          <p id="formMsg" role="alert"></p>
-        </form>
-      </div>
-
-      <!-- Interactive map -->
-      <h2>Find us</h2>
+      <h2>Find us on the map</h2>
       <div id="map"></div>
     </section>
 
     <aside class="sidebar">
-      <h3>Specials this week</h3>
-      <p>Hot cross buns – R20<br>Carrot cake slice – R50<br>Sugar cubes (4 pc) – R30</p>
+      <h3>Specials This Week</h3>
+      <p>Hot Cross Buns – R20<br>
+         Carrot Cake Slice – R50<br>
+         Sugar Cubes (4 pc) – R30</p>
     </aside>
   </main>
 
   <footer>
-    <p>&copy; 2025 Sweet Buns Bakery</p>
+    <p>&copy; 2025 Sweet Buns Bakery | Cape Town</p>
   </footer>
 
+  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="js/main.js"></script>
+
+  <script>
+    // --- Map setup ---
+    const map = L.map('map', {
+      center: [-33.9249, 18.4241],
+      zoom: 15,
+      scrollWheelZoom: false,
+    });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+    L.marker([-33.9249, 18.4241])
+      .addTo(map)
+      .bindPopup('<b>Sweet Buns Bakery</b><br>45 Bakery Street, Cape Town')
+      .openPopup();
+
+    // --- Email form handling ---
+    const form = document.getElementById('emailForm');
+    const msg = document.getElementById('formMsg');
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+
+      const name = form.frmName.value.trim();
+      const email = form.frmEmail.value.trim();
+      const message = form.frmMessage.value.trim();
+      const sendVia = form.sendVia.value;
+
+      if (!name || !email || !message) {
+        msg.textContent = 'Please fill in all required fields.';
+        msg.style.color = 'red';
+        return;
+      }
+
+      const subject = encodeURIComponent(`Message from ${name}`);
+      const body = encodeURIComponent(`From: ${name}\nEmail: ${email}\n\n${message}`);
+      let mailtoLink = '';
+
+      switch (sendVia) {
+        case 'mailto':
+          mailtoLink = `mailto:info@sweetbuns.com?subject=${subject}&body=${body}`;
+          window.location.href = mailtoLink;
+          break;
+        case 'gmail':
+          mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=info@sweetbuns.com&su=${subject}&body=${body}`;
+          window.open(mailtoLink, '_blank');
+          break;
+        case 'outlook':
+          mailtoLink = `https://outlook.office.com/mail/deeplink/compose?to=info@sweetbuns.com&subject=${subject}&body=${body}`;
+          window.open(mailtoLink, '_blank');
+          break;
+        case 'server':
+          msg.textContent = 'Message sent successfully (simulated)!';
+          msg.style.color = 'green';
+          form.reset();
+          break;
+      }
+    });
+  </script>
+
+  <!--  
+  ================================
+  REFERENCES (Hidden)
+  ================================
+  - ChatGPT (OpenAI). Assisted with HTML, CSS, and JavaScript integration for functional email sending and page layout. Accessed Nov 2025.
+  - Cinnabon South Africa. https://www.cinnabon.co.za — Branding inspiration for colours and tone.
+  - Pick n Pay Bakery. https://www.pnp.co.za — Reference for layout and contact accessibility.
+  - Instagram (@sweetbunsofficial) — Social link and style inspiration.
+
+  ================================
+  CHANGELOG (Hidden)
+  ================================
+  v1.0 – 2025-10-30: Initial layout and basic content created.
+  v1.1 – 2025-11-01: Added form, map, and styling.
+  v1.2 – 2025-11-02: Implemented email sending logic.
+  v1.3 – 2025-11-03: Added hidden references and changelog for documentation.
+  ================================
+  -->
 </body>
 </html>

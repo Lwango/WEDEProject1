@@ -9,17 +9,77 @@
 
   <meta property="og:title" content="Bakery Gallery Cape Town | Fresh Bread & Cake Photos – Sweet Buns">
   <meta property="og:description" content="Photo gallery of artisan sour-dough, custom cakes, vegan muffins & seasonal specials baked daily at Sweet Buns Bakery Cape Town.">
-  <meta property="og:image" content="https://yourdomain.net/images/artisan-bread-display-cape-town.jpg">
+  <meta property="og:image" content="https://yourdomain.net/images/artisan.jpeg">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="stylesheet" href="css/style.css">
   <style>
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;padding:0;margin:0;}
-    .gallery-grid img{width:100%;height:160px;object-fit:cover;border-radius:6px;cursor:pointer;transition:transform .3s;}
-    .gallery-grid img:hover{transform:scale(1.05);}
-    #lightbox{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.85);display:flex;align-items:center;justify-content:center;z-index:999;}
-    #lightbox img{max-width:90%;max-height:90%;border-radius:8px;}
-    #lightbox span{position:absolute;top:20px;right:40px;color:#fff;font-size:40px;cursor:pointer;}
+    /* ----  Gallery cards with price  ---- */
+    .gallery-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:25px;
+      padding:0;
+      margin:0;
+    }
+    .card{
+      background:#fff4e6;
+      border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,.1);
+      overflow:hidden;
+      transition:transform .3s, box-shadow .3s;
+      position:relative;
+    }
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 8px 20px rgba(0,0,0,.15);
+    }
+    .card img{
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      cursor:pointer;
+    }
+    .card-body{
+      padding:15px 20px;
+    }
+    .card-title{
+      font-size:1.1rem;
+      font-weight:600;
+      color:#8B4513;
+      margin:0 0 8px;
+    }
+    .card-price{
+      font-size:1.25rem;
+      font-weight:700;
+      color:#a0522d;
+      margin:0;
+    }
+    .card small{
+      color:#555;
+    }
+
+    /* ----  Lightbox (unchanged)  ---- */
+    #lightbox{
+      position:fixed;
+      top:0;left:0;
+      width:100%;height:100%;
+      background:rgba(0,0,0,.85);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      z-index:999;
+    }
+    #lightbox img{
+      max-width:90%;max-height:90%;
+      border-radius:8px;
+    }
+    #lightbox span{
+      position:absolute;
+      top:20px;right:40px;
+      color:#fff;font-size:40px;
+      cursor:pointer;
+    }
   </style>
 </head>
 
@@ -38,20 +98,125 @@
 
   <header>
     <h1>Fresh out of the oven</h1>
-    <p>Click any image to see it larger. <a href="services.html">Order your favourite</a> or <a href="enquiry.html">enquire about custom work</a>.</p>
+    <p>Click any image to enlarge, then <a href="enquiry.html">enquire</a> or <a href="services.html">order</a>.</p>
   </header>
 
   <main class="content">
     <section class="intro">
+      <!--  10-image gallery with price cards  -->
       <div class="gallery-grid" id="gallery">
-        <!-- Descriptive file names & alt for SEO -->
-        <img src="images/artisan-bread-thumb.jpg" data-full="images/artisan-bread.jpg" alt="Artisan sour-dough bread display at Sweet Buns Bakery Cape Town" loading="lazy">
-        <img src="images/vegan-chocolate-muffins-thumb.jpg" data-full="images/vegan-chocolate-muffins.jpg" alt="Vegan chocolate muffins with local cocoa at Sweet Buns Bakery" loading="lazy">
-        <img src="images/custom-birthday-cake-thumb.jpg" data-full="images/custom-birthday-cake.jpg" alt="Custom birthday cake created by Sweet Buns Bakery Cape Town" loading="lazy">
-        <img src="images/buttery-croissants-thumb.jpg" data-full="images/buttery-croissants.jpg" alt="Buttery croissants made fresh every morning at Sweet Buns Bakery" loading="lazy">
-        <img src="images/seasonal-specials-thumb.jpg" data-full="images/seasonal-specials.jpg" alt="Assorted seasonal sweet treats and pastries display at Sweet Buns Bakery" loading="lazy">
-        <img src="images/hot-cross-buns-thumb.jpg" data-full="images/hot-cross-buns.jpg" alt="Traditional hot cross buns seasonal special at Sweet Buns Bakery Cape Town" loading="lazy">
-      </div>
+
+        <!-- 1  artisan bread -->
+        <div class="card">
+          <img src="images/artisan.jpeg" data-full="images/artisan.jpeg"
+               alt="Artisan sour-dough bread display at Sweet Buns Bakery Cape Town" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">Artisan Sourdough</h3>
+            <p class="card-price">R 28</p>
+            <small>Fresh daily</small>
+          </div>
+        </div>
+
+        <!-- 2  birthday cake -->
+        <div class="card">
+          <img src="images/birthday%20cake.jpeg" data-full="images/birthday%20cake.jpeg"
+               alt="Custom birthday cake created by Sweet Buns Bakery Cape Town" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">Custom Birthday Cake</h3>
+            <p class="card-price">R 450</p>
+            <small>48 h notice</small>
+          </div>
+        </div>
+
+        <!-- 3  croissants -->
+        <div class="card">
+          <img src="images/croissants.jpeg" data-full="images/croissants.jpeg"
+               alt="Buttery croissants breakfast at Sweet Buns Bakery Cape Town" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">Buttery Croissants</h3>
+            <p class="card-price">R 22</p>
+            <small>Per 2 pc</small>
+          </div>
+        </div>
+
+        <!-- 4  donuts -->
+        <div class="card">
+          <img src="images/donuts.jpeg" data-full="images/donuts.jpeg"
+               alt="Fresh donuts variety at Sweet Buns Bakery Cape Town" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">Assorted Donuts</h3>
+            <p class="card-price">R 18</p>
+            <small>Each</small>
+          </div>
+        </div>
+
+        <!-- 5  gluten free -->
+        <div class="card">
+          <img src="images/gluten%20free.jpeg" data-full="images/gluten%20free.jpeg"
+               alt="Gluten-free muffins baked fresh at Sweet Buns Bakery Cape Town" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">Gluten-Free Muffins</h3>
+            <p class="card-price">R 25</p>
+            <small>Vegan option</small>
+          </div>
+        </div>
+
+        <!-- 6  hot crossbuns -->
+        <div class="card">
+          <img src="images/sweet treat 2.jpeg" data-full="images/sweet treat 2.jpeg"
+               alt="Traditional hot cross buns seasonal special at Sweet Buns Bakery Cape Town" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">cinnamon buns </h3>
+            <p class="card-price">R 20</p>
+            <small>4 per pack</small>
+          </div>
+        </div>
+
+        <!-- 7  pasteires -->
+        <div class="card">
+          <img src="images/pasteires.jpeg" data-full="images/pasteires.jpeg"
+               alt="French pâtisserie selection at Sweet Buns Bakery Cape Town" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">French Pâtisserie</h3>
+            <p class="card-price">R 35</p>
+            <small>Each</small>
+          </div>
+        </div>
+
+        <!-- 8  pasteries 2 -->
+        <div class="card">
+          <img src="images/pasteries%202.jpeg" data-full="images/pasteries%202.jpeg"
+               alt="Assorted French pastries display at Sweet Buns Bakery Cape Town" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">Pastry Selection</h3>
+            <p class="card-price">R 30</p>
+            <small>Mini box</small>
+          </div>
+        </div>
+
+        <!-- 9  samoosa -->
+        <div class="card">
+          <img src="images/samoosa.jpeg" data-full="images/samoosa.jpeg"
+               alt="Crispy samoosas baked at Sweet Buns Bakery Cape Town" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">Samoosas</h3>
+            <p class="card-price">R 12</p>
+            <small>Per 2 pc</small>
+          </div>
+        </div>
+
+        <!-- 10  veganbananabread -->
+        <div class="card">
+          <img src="images/sweet treats 3.jpeg" data-full="images/sweet treats 3.jpeg"
+               alt="Vegan banana bread baked daily at Sweet Buns Bakery Cape Town" loading="lazy">
+          <div class="card-body">
+            <h3 class="card-title">sweet treat</h3>
+            <p class="card-price">R 32</p>
+            <small>Whole loaf</small>
+          </div>
+        </div>
+
+      </div><!-- /gallery-grid -->
     </section>
 
     <aside class="sidebar">
@@ -66,7 +231,7 @@
 
   <script src="js/main.js"></script>
   <script>
-    /* simple lightbox */
+    /* lightbox: click card image → enlarge */
     const gal = document.getElementById('gallery');
     if (gal) {
       gal.addEventListener('click', e => {
