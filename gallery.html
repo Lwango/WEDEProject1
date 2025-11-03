@@ -1,14 +1,17 @@
-<!-- gallery.html  (lightbox included) -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<nav>
-</nav>
 <head>
   <meta charset="utf-8">
-  <title>Gallery | Sweet Buns Bakery</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Photo gallery of fresh bread, cakes and pastries at Sweet Buns Bakery, Cape Town.">
+  <title>Bakery Gallery Cape Town | Fresh Bread & Cake Photos – Sweet Buns</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse photos of artisan sour-dough, custom cakes, vegan muffins & seasonal specials baked daily at Sweet Buns Bakery in Cape Town.">
   <link rel="canonical" href="https://yourdomain.net/gallery.html">
+
+  <meta property="og:title" content="Bakery Gallery Cape Town | Fresh Bread & Cake Photos – Sweet Buns">
+  <meta property="og:description" content="Photo gallery of artisan sour-dough, custom cakes, vegan muffins & seasonal specials baked daily at Sweet Buns Bakery Cape Town.">
+  <meta property="og:image" content="https://yourdomain.net/images/artisan-bread-display-cape-town.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="css/style.css">
   <style>
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;padding:0;margin:0;}
@@ -19,38 +22,62 @@
     #lightbox span{position:absolute;top:20px;right:40px;color:#fff;font-size:40px;cursor:pointer;}
   </style>
 </head>
-<body>
-<nav><h1 class="logo">Sweet Buns</h1><ul><li><a href="homepage.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="enquiry.html">Enquiry</a></li><li><a href="contact.html">Contact</a></li></ul></nav>
-<header><h1>Fresh out of the oven</h1><p>Click any image to see it larger.</p></header>
-<main class="content">
-  <section class="intro">
-    <div class="gallery-grid" id="gallery">
-      <!-- descriptive file names & alt for SEO -->
-      <img src="images/artisan-bread-thumb.jpg" data-full="images/artisan-bread.jpg" alt="Artisanal sour-dough bread baked daily at Sweet Buns Bakery Cape Town" loading="lazy">
-      <img src="images/vegan-muffins-thumb.jpg" data-full="images/vegan-muffins.jpg" alt="Vegan chocolate muffins with local cocoa" loading="lazy">
-      <img src="images/custom-cake-thumb.jpg" data-full="images/custom-cake.jpg" alt="Custom birthday cake created by Sweet Buns Bakery" loading="lazy">
-      <img src="images/croissant-thumb.jpg" data-full="images/croissant.jpg" alt="Buttery croissants made fresh every morning" loading="lazy">
-      <img src="images/sweet-treats-3-thumb.jpg" data-full="images/sweet-treats-3.jpg" alt="Assorted sweet treats and pastries display" loading="lazy">
-      <img src="images/hot-cross-buns-thumb.jpg" data-full="images/hot-cross-buns.jpg" alt="Traditional hot cross buns seasonal special" loading="lazy">
-    </div>
-  </section>
-  <aside class="sidebar"><h3>Specials</h3><p>Check our seasonal treats and custom cakes available this week.</p></aside>
-</main>
-<footer><p>&copy; 2025 Sweet Buns Bakery</p></footer>
 
-<script src="js/main.js"></script>
-<script>
-/* simple lightbox */
-const gal = document.getElementById('gallery');
-if(gal){
-  gal.addEventListener('click',e=>{
-    if(e.target.tagName!=='IMG')return;
-    const box=document.createElement('div');box.id='lightbox';
-    box.innerHTML=`<img src="${e.target.dataset.full}" alt="${e.target.alt}"><span id="close">&times;</span>`;
-    document.body.appendChild(box);
-    box.onclick=()=>box.remove();
-  });
-}
-</script>
+<body>
+  <nav>
+    <h1 class="logo">Sweet Buns</h1>
+    <ul>
+      <li><a href="homepage.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="enquiry.html">Enquiry</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Fresh out of the oven</h1>
+    <p>Click any image to see it larger. <a href="services.html">Order your favourite</a> or <a href="enquiry.html">enquire about custom work</a>.</p>
+  </header>
+
+  <main class="content">
+    <section class="intro">
+      <div class="gallery-grid" id="gallery">
+        <!-- Descriptive file names & alt for SEO -->
+        <img src="images/artisan-bread-thumb.jpg" data-full="images/artisan-bread.jpg" alt="Artisan sour-dough bread display at Sweet Buns Bakery Cape Town" loading="lazy">
+        <img src="images/vegan-chocolate-muffins-thumb.jpg" data-full="images/vegan-chocolate-muffins.jpg" alt="Vegan chocolate muffins with local cocoa at Sweet Buns Bakery" loading="lazy">
+        <img src="images/custom-birthday-cake-thumb.jpg" data-full="images/custom-birthday-cake.jpg" alt="Custom birthday cake created by Sweet Buns Bakery Cape Town" loading="lazy">
+        <img src="images/buttery-croissants-thumb.jpg" data-full="images/buttery-croissants.jpg" alt="Buttery croissants made fresh every morning at Sweet Buns Bakery" loading="lazy">
+        <img src="images/seasonal-specials-thumb.jpg" data-full="images/seasonal-specials.jpg" alt="Assorted seasonal sweet treats and pastries display at Sweet Buns Bakery" loading="lazy">
+        <img src="images/hot-cross-buns-thumb.jpg" data-full="images/hot-cross-buns.jpg" alt="Traditional hot cross buns seasonal special at Sweet Buns Bakery Cape Town" loading="lazy">
+      </div>
+    </section>
+
+    <aside class="sidebar">
+      <h3>Specials this week</h3>
+      <p>Hot cross buns – R20<br>Carrot cake slice – R50<br>Sugar cubes (4 pc) – R30</p>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sweet Buns Bakery</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    /* simple lightbox */
+    const gal = document.getElementById('gallery');
+    if (gal) {
+      gal.addEventListener('click', e => {
+        if (e.target.tagName !== 'IMG') return;
+        const box = document.createElement('div');
+        box.id = 'lightbox';
+        box.innerHTML = `<img src="${e.target.dataset.full}" alt="${e.target.alt}"><span id="close">&times;</span>`;
+        document.body.appendChild(box);
+        box.onclick = () => box.remove();
+      });
+    }
+  </script>
 </body>
 </html>
